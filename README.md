@@ -8,7 +8,7 @@ To write a python program for creating File Transfer using TCP Sockets Links
 4. Open the file and then send it to the client in byte format.
 5. In the client side receive the file from server and then write the content into it.
 ## PROGRAM
-server:
+```server:
 import socket
 import os
 
@@ -45,8 +45,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             print(f"Client requested file: {filename}")
 
             send_file(filename, conn)
-
-Client:
+```
+```Client:
 import socket
 
 HOST = '127.0.0.1'  
@@ -81,7 +81,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     client_socket.sendall(filename.encode('utf-8'))
 
     receive_file(filename, client_socket)
-
+```
 ## OUPUT
 server:
 ![Screenshot 2025-05-13 044556](https://github.com/user-attachments/assets/08f2619d-5bd1-4ffd-b487-53f41345161b)
